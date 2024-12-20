@@ -55,12 +55,12 @@ clustering.ipynb file
 ```
  ## Visuals
 
-        ### Churn Insights
+ ### Churn Insights
   ![alt text](image-1.png)
 
-        ### Model Performance
+ ### Model Performance
 
-        ### Clustering
+ ### Clustering
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
