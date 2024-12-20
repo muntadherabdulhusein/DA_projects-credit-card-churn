@@ -55,15 +55,17 @@ clustering.ipynb file
 ```
  ## Visuals
 
-  ### Churn Insights
+        ### Churn Insights
   ![alt text](image-1.png)
 
-  ### Model Performance
+        ### Model Performance
 
-  ### Clustering
+        ### Clustering
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
+
+
  ## Conclusion
 This project demonstrates how machine learning can provide actionable insights into customer behavior and help businesses reduce churn. By combining classification and clustering techniques, we successfully predicted churn and identified meaningful customer segments, paving the way for targeted and efficient retention strategies.
 
