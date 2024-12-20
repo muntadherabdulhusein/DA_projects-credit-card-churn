@@ -1,6 +1,7 @@
 # DA_projects-credit-card-churn
 
 🏢 Description
+
 ![alt text](https://www.informalnewz.com/wp-content/uploads/2023/10/New-Credit-Card.jpg)
 
 This project focuses on predicting customer churn and providing actionable insights into customer behavior and retention strategies for a credit card company. Our team was tasked with analyzing a dataset containing customer demographic, account, and transaction information to uncover patterns and trends related to churn. This analysis explores customer segmentation, churn drivers, and potential strategies for customer retention.
