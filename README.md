@@ -9,6 +9,25 @@ This project focuses on predicting customer churn and providing actionable insig
 
 Python: For data manipulation, analysis,machine learning, and visualization.
 
+## Installation
+. Required Python version: Python 3.8 or higher.
+. Install the required libraries:
+    pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+. Clone the repository and navigate to the project directory:
+    git clone https://github.com/muntadherabdulhusein/DA_projects-credit-card-churn/tree/main
+  
+## 🛎️ Usage
+. Clone the repository to your local machine.
+. Set Up Your Environment.Ensure you have the necessary libraries installed. You can do this by running:
+    pip install -r requirements.txt
+. Open the main.ipynb file in Jupyter Notebook
+. For classification analyses and prediction analyses and results click on the classification.ipynb file.
+. To see the clustering analyses and the characteristics of customers who have left the bank click on the 
+clustering.ipynb file 
+
+ ## Data Sources
+ The Kaggle Credit Card Customers Dataset has been used for this project.
+
  ## 📦 Repo structure
  ```
 ├── cleaned_data/
@@ -34,20 +53,17 @@ Python: For data manipulation, analysis,machine learning, and visualization.
 ├── BankChurners.csv
 └── README.md
 ```
+ ## Visuals
 
- ## 🛎️ Usage
-1 . Clone the repository to your local machine.
+  ### Churn Insights
+  ![alt text](image-1.png)
 
-2 .Set Up Your Environment:
+  ### Model Performance
 
-Ensure you have the necessary libraries installed. You can do this by running:
-
-  pip install -r requirements.txt
-Generate Visualizations:
-Navigate to the Analysis/ folder.
-Open the main.ipynb file in Jupyter Notebook.
-Run the cells in the notebook to generate the visualizations based on the dataset. These visualizations will help illustrate key insights from the data.
-
+  ### Clustering
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
  ## Conclusion
 This project demonstrates how machine learning can provide actionable insights into customer behavior and help businesses reduce churn. By combining classification and clustering techniques, we successfully predicted churn and identified meaningful customer segments, paving the way for targeted and efficient retention strategies.
 
