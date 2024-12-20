@@ -10,6 +10,7 @@ This project focuses on predicting customer churn and providing actionable insig
 Python: For data manipulation, analysis,machine learning, and visualization.
 
  ## 📦 Repo structure
+ ```
 ├── cleaned_data/
 │   ├── cleaned_data.csv
 │   └── fixed_data.ipynb
@@ -23,7 +24,6 @@ Python: For data manipulation, analysis,machine learning, and visualization.
 │   └── test.ipynb
 |  
 ├── Yeliz/
-│   ├── test.py
 │   |── yeliz_classf.ipynb
 │   └── yeliz_clus.ipynb
 │    
@@ -33,6 +33,7 @@ Python: For data manipulation, analysis,machine learning, and visualization.
 |   
 ├── BankChurners.csv
 └── README.md
+```
 
  ## 🛎️ Usage
 1 . Clone the repository to your local machine.
