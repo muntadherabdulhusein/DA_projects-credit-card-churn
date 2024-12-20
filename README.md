@@ -1,6 +1,6 @@
 # DA_projects-credit-card-churn
 
-🏢 Description
+
 ![alt text](https://www.informalnewz.com/wp-content/uploads/2023/10/New-Credit-Card.jpg)
 
  ## 🏢 Description
