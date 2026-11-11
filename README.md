@@ -1,82 +1,54 @@
-# DA_projects-credit-card-churn
+# Credit Card Customer Churn
 
+A bank was losing credit card customers and wanted to know who is likely to leave next, so it could try to keep them. We used the [Credit Card Customers dataset from Kaggle](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers) (about 10,000 customers) to:
 
-![alt text](https://www.informalnewz.com/wp-content/uploads/2023/10/New-Credit-Card.jpg)
+1. predict which customers will churn
+2. group customers into segments to understand who the churners are
 
- ## 🏢 Description
+This was a 5-day team project at BeCode with Yusra Ali, Yeliz Kaya and Maarten Warnez.
 
-This project focuses on predicting customer churn and providing actionable insights into customer behavior and retention strategies for a credit card company. Our team was tasked with analyzing a dataset containing customer demographic, account, and transaction information to uncover patterns and trends related to churn. This analysis explores customer segmentation, churn drivers, and potential strategies for customer retention.
+## The data
 
-Python: For data manipulation, analysis,machine learning, and visualization.
+Each row is a customer, with information like age, income, card type, credit limit, number of transactions and months of inactivity. Only around 16% of the customers left, so the data is quite imbalanced. That was the main challenge: a model that just says "nobody leaves" would already be 84% accurate and completely useless.
 
-## Installation
-. Required Python version: Python 3.8 or higher.
-. Install the required libraries:
-    pip install pandas numpy scikit-learn matplotlib seaborn jupyter
-. Clone the repository and navigate to the project directory:
-    git clone https://github.com/muntadherabdulhusein/DA_projects-credit-card-churn/tree/main
-  
-## 🛎️ Usage
-. Clone the repository to your local machine.
-. Set Up Your Environment.Ensure you have the necessary libraries installed. You can do this by running:
-    pip install -r requirements.txt
-. Open the main.ipynb file in Jupyter Notebook
-. For classification analyses and prediction analyses and results click on the classification.ipynb file.
-. To see the clustering analyses and the characteristics of customers who have left the bank click on the 
-clustering.ipynb file 
+## What we did
 
- ## Data Sources
- The Kaggle Credit Card Customers Dataset has been used for this project.
+- Cleaned the data and one-hot encoded the categorical columns (education, income, marital status, card type)
+- Picked the most useful features with an Extra Trees model
+- Used SMOTE on the training data to balance the two classes
+- Trained 5 models and compared them with 5-fold cross-validation
+- Used PCA + K-Means to split the customers into 6 groups
 
- ## 📦 Repo structure
- ```
-├── cleaned_data/
-│   ├── cleaned_data.csv
-│   └── fixed_data.ipynb
-├── Maarten/
-│   ├── maarten.ipynb
-| 
-├── Main/
-│   |── classifiying.ipynb
-|   └── clustering.ipynb
-├── Muntadher/
-│   └── test.ipynb
-|  
-├── Yeliz/
-│   |── yeliz_classf.ipynb
-│   └── yeliz_clus.ipynb
-│    
-├── Yusra/
-│   ├── CC(dataanalysis).ipynb
-│   └── Creditcard-kmeans.ipynb
-|   
-├── BankChurners.csv
-└── README.md
+## Results
+
+Test set: 2,532 customers, 407 of them churned.
+
+| Model | Accuracy | Churn precision | Churn recall |
+|---|---|---|---|
+| Random Forest | 0.96 | 0.85 | 0.88 |
+| Decision Tree | 0.94 | 0.79 | 0.86 |
+| KNN | 0.88 | 0.60 | 0.84 |
+| Logistic Regression | 0.84 | 0.51 | 0.79 |
+| Naive Bayes | 0.79 | 0.41 | 0.73 |
+
+Random Forest worked best. It found 358 of the 407 customers who left. I focused on recall because for the bank, missing a customer who is about to leave is worse than calling someone who was going to stay anyway.
+
+![Churn insights](image-1.png)
+
+![Clusters](image-2.png)
+![Cluster profiles](image-3.png)
+![Churn by cluster](image-4.png)
+
+## Files
+
+- `Main/classifiying.ipynb`: the final models
+- `Main/clustering.ipynb`: the customer segments
+- `cleaned_data/`: cleaning notebook and the cleaned csv
+- the folders with our names: each person's own exploration
+
+## Run it
+
 ```
- ## Visuals
-
- ### Churn Insights
-  ![alt text](image-1.png)
-
- ### Model Performance
-
- ### Clustering
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
-
-
- ## Conclusion
-This project demonstrates how machine learning can provide actionable insights into customer behavior and help businesses reduce churn. By combining classification and clustering techniques, we successfully predicted churn and identified meaningful customer segments, paving the way for targeted and efficient retention strategies.
-
- ## ⏱️ Timeline
-This project took five days for completion.
-
- ## 📌 Contributors
-This project was done as part of the AI Boocamp at BeCode.org.
-```
-Muntadher Abdulhusein 
-Yusra Ali
-Yeliz Kaya
-Maarten Warnez
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn jupyter
+jupyter notebook Main/classifiying.ipynb
 ```
