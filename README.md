@@ -5,7 +5,7 @@ A bank was losing credit card customers and wanted to know who is likely to leav
 1. predict which customers will churn
 2. group customers into segments to understand who the churners are
 
-This was a 5-day team project at BeCode with Yusra Ali, Yeliz Kaya and Maarten Warnez.
+This was a 5-day team project at BeCode with Yusra Ali, Yeliz Kaya and Maarten Warnez and muntadher
 
 ## The data
 
