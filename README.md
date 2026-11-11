@@ -36,8 +36,20 @@ Random Forest worked best. It found 358 of the 407 customers who left. I focused
 ![Churn insights](image-1.png)
 
 ![Clusters](image-2.png)
-![Cluster profiles](image-3.png)
-![Churn by cluster](image-4.png)
+![Churn by cluster](image-3.png)
+![Cluster profiles](image-4.png)
+
+## What we found
+
+- Demographics don't explain much. Around 15-17% of both men and women left, and the churn rate looks about the same across education levels, income groups and card types.
+- One segment stands out: in Group 3 roughly 4 out of 10 customers left, while in most other groups it was about 1 in 10.
+- Group 3 customers have the fewest products with the bank (low `Total_Relationship_Count`). People who only use one or two of the bank's products seem much easier to lose.
+
+So instead of targeting customers by age or income, the bank should look at how connected they are. Offering a second product (a savings account, an app feature, a better card) to customers with only one or two products could be a cheap way to keep them.
+
+## My part
+
+I took care of the data preparation: cleaning the data, one-hot encoding the categorical columns (education, income, marital status, card type) and picking the most useful features with an Extra Trees model.
 
 ## Files
 
