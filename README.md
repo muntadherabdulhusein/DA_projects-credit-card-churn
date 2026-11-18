@@ -24,21 +24,26 @@ Each row is a customer, with information like age, income, card type, credit lim
 
 Test set: 2,532 customers, 407 of them churned.
 
-| Model | Accuracy | Churn precision | Churn recall |
-|---|---|---|---|
-| Random Forest | 0.96 | 0.85 | 0.88 |
-| Decision Tree | 0.94 | 0.79 | 0.86 |
-| KNN | 0.88 | 0.60 | 0.84 |
-| Logistic Regression | 0.84 | 0.51 | 0.79 |
-| Naive Bayes | 0.79 | 0.41 | 0.73 |
+| Model | Accuracy | Churn precision | Churn recall | Churn F1 |
+|---|---|---|---|---|
+| Random Forest | 0.95 | 0.83 | 0.86 | 0.85 |
+| Decision Tree | 0.93 | 0.75 | 0.83 | 0.79 |
+| KNN | 0.90 | 0.66 | 0.85 | 0.74 |
+| Logistic Regression | 0.85 | 0.52 | 0.81 | 0.63 |
+| Naive Bayes | 0.78 | 0.41 | 0.76 | 0.53 |
 
-Random Forest worked best. It found 358 of the 407 customers who left. I focused on recall because for the bank, missing a customer who is about to leave is worse than calling someone who was going to stay anyway.
+Random Forest worked best. It found 352 of the 407 customers who left. I focused on recall because for the bank, missing a customer who is about to leave is worse than calling someone who was going to stay anyway.
+
+The most important features were the number and amount of transactions, the revolving balance and the change in transactions between Q1 and Q4.
+
+![Confusion matrix](image-5.png)
+![Feature importance](image-6.png)
 
 ![Churn insights](image-1.png)
 
-![Clusters](image-2.png)
-![Churn by cluster](image-3.png)
-![Cluster profiles](image-4.png)
+![Customer groups](image-2.png)
+![Churn by group](image-3.png)
+![Group profiles](image-4.png)
 
 ## What we found
 
@@ -57,6 +62,8 @@ When I reviewed the code later, I found and fixed three problems:
 - **Data leakage in feature selection.** Features were picked using all the data, including the test set. Now they are picked on the training data only.
 - **SMOTE before cross-validation.** Synthetic samples leaked into the validation folds and made the cross-validation scores too optimistic. SMOTE now runs inside a pipeline.
 - **Mixed cluster labels.** The churn charts and the group profiles came from two different K-Means runs, so "Group 3" did not mean the same customers in both. All charts now use one clustering. This changed one conclusion: the high-churn group is defined by low card use, not by having few products.
+
+After the fixes the model results stayed almost the same (Random Forest churn recall 0.88 → 0.86), so the model is genuinely good and the earlier scores were not just a result of the leakage.
 
 ## My part
 
